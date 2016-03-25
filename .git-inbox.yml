@@ -1,0 +1,14 @@
+files:
+  - data/simple-example.yml # simple target path
+
+  - in: example*.xlsx # glob
+    out: example.yml # target path
+
+  - in: raw-example*.xlsx
+    out:
+      format: copy
+      path: data/raw-example.xlsx
+
+push:
+  type: github-request
+  base: master
